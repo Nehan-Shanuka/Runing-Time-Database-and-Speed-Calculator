@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sanmak.InputController">
    <children>
       <Text layoutX="170.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INPUT the RUNNER">
@@ -39,7 +38,6 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="263.0" layoutY="107.0" prefHeight="26.0" prefWidth="238.0" />
       <Button layoutX="176.0" layoutY="326.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" style="-fx-background-radius: 8;" text="BACK">
          <font>
             <Font size="15.0" />
@@ -50,6 +48,7 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <TextField fx:id="nameText" layoutX="263.0" layoutY="107.0" prefHeight="26.0" prefWidth="238.0" />
       <TextField layoutX="263.0" layoutY="147.0" prefHeight="26.0" prefWidth="238.0" />
       <TextField layoutX="263.0" layoutY="187.0" prefHeight="26.0" prefWidth="238.0" />
       <TextField layoutX="263.0" layoutY="227.0" prefHeight="26.0" prefWidth="238.0" />
