@@ -43,15 +43,15 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="339.0" layoutY="326.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" style="-fx-background-radius: 8;" text="ADD">
+      <Button layoutX="339.0" layoutY="326.0" mnemonicParsing="false" onAction="#addTheRunner" prefHeight="36.0" prefWidth="82.0" style="-fx-background-radius: 8;" text="ADD">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <TextField fx:id="nameText" layoutX="263.0" layoutY="107.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField layoutX="263.0" layoutY="147.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField layoutX="263.0" layoutY="187.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField layoutX="263.0" layoutY="227.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField layoutX="263.0" layoutY="267.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="radiusText" layoutX="263.0" layoutY="147.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="startTimeText" layoutX="263.0" layoutY="187.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="endTimeText" layoutX="263.0" layoutY="227.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="numLapText" layoutX="263.0" layoutY="267.0" prefHeight="26.0" prefWidth="238.0" />
    </children>
 </AnchorPane>
