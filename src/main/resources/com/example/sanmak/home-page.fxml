@@ -27,5 +27,10 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Button layoutX="248.0" layoutY="274.0" mnemonicParsing="false" onAction="#databaseShow" prefHeight="33.0" prefWidth="99.0" style="-fx-background-radius: 8;" text="Show Data">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
