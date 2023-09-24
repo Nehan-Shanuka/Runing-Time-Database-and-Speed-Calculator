@@ -26,4 +26,14 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    protected void databaseShow(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("database-page.fxml"));
+        scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("The Database");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
