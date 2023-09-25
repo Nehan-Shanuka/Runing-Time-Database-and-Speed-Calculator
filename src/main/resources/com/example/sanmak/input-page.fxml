@@ -8,50 +8,50 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sanmak.InputController">
    <children>
-      <Text layoutX="271.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INPUT the RUNNER">
+      <Text layoutX="184.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INPUT the RUNNER">
          <font>
-            <Font size="30.0" />
+            <Font size="50.0" />
          </font>
       </Text>
-      <Text layoutX="198.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Runner Name">
+      <Text layoutX="157.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Runner Name">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Radius (m)">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Time">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Time">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Laps">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Button layoutX="263.0" layoutY="469.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="110.0" style="-fx-background-radius: 15;" text="BACK">
          <font>
             <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="198.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Radius (m)">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="198.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Time">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="198.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Time">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text layoutX="198.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Laps">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Button layoutX="277.0" layoutY="432.0" mnemonicParsing="false" onAction="#backButton" prefHeight="36.0" prefWidth="82.0" style="-fx-background-radius: 8;" text="BACK">
-         <font>
-            <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="440.0" layoutY="432.0" mnemonicParsing="false" onAction="#addTheRunner" prefHeight="36.0" prefWidth="82.0" style="-fx-background-radius: 8;" text="ADD">
+      <Button layoutX="426.0" layoutY="469.0" mnemonicParsing="false" onAction="#addTheRunner" prefHeight="40.0" prefWidth="110.0" style="-fx-background-radius: 15;" text="ADD">
          <font>
-            <Font size="15.0" />
+            <Font size="20.0" />
          </font>
       </Button>
-      <TextField fx:id="nameText" layoutX="364.0" layoutY="213.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField fx:id="radiusText" layoutX="364.0" layoutY="253.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField fx:id="startTimeText" layoutX="364.0" layoutY="293.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField fx:id="endTimeText" layoutX="364.0" layoutY="333.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField fx:id="numLapText" layoutX="364.0" layoutY="373.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField fx:id="nameText" layoutX="367.0" layoutY="182.0" prefHeight="30.0" prefWidth="275.0" />
+      <TextField fx:id="radiusText" layoutX="367.0" layoutY="233.0" prefHeight="30.0" prefWidth="275.0" />
+      <TextField fx:id="startTimeText" layoutX="367.0" layoutY="284.0" prefHeight="30.0" prefWidth="275.0" />
+      <TextField fx:id="endTimeText" layoutX="367.0" layoutY="335.0" prefHeight="30.0" prefWidth="275.0" />
+      <TextField fx:id="numLapText" layoutX="367.0" layoutY="386.0" prefHeight="30.0" prefWidth="275.0" />
    </children>
 </AnchorPane>
