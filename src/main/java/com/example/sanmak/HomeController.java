@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -33,6 +32,16 @@ public class HomeController {
         scene = new Scene(root);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("The Database");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void backButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("home-page.fxml"));
+        scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Welcome to Runner Application");
         stage.setScene(scene);
         stage.show();
     }
