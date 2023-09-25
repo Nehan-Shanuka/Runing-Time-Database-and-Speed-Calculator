@@ -7,24 +7,26 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
 
-    private static String name;
-    private static double radius;
-    private static String start_time;
-    private static String end_time;
-    private static int laps;
-    private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    private static LocalTime startTime = null;
-    private static LocalTime endTime = null;
+    private String name;
+    private double radius;
+    private String start_time;
+    private String end_time;
+    private float laps;
+    private float speed;
+    private float runTimeInSecs;
+    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    private LocalTime startTime = null;
+    private LocalTime endTime = null;
 
-    public Main(String name, double radius, String start_time, String end_time, int laps) {
-        Main.name = name;
-        Main.radius = radius;
-        Main.start_time =start_time;
-        Main.end_time = end_time;
-        Main.laps = laps;
+    public Main(String name, double radius, String start_time, String end_time, float laps) {
+        this.name = name;
+        this.radius = radius;
+        this.start_time = start_time;
+        this.end_time = end_time;
+        this.laps = laps;
     }
 
-    public static void inputData() {
+    public void inputData() {
 
         try {
             startTime = LocalTime.parse(start_time, timeFormatter);
@@ -44,16 +46,13 @@ public class Main {
 
         Duration timeDifference = Duration.between(startTime, endTime);
 
-        float runTimeInSecs = timeDifference.toSeconds();
+        runTimeInSecs = timeDifference.toSeconds();
 
         float runTimeInHours = runTimeInSecs / (60*60);
-        System.out.println(runTimeInHours);
 
         float trackLength = (float) ((float) 2 * Math.PI * radius * laps) / 1000;
-        System.out.println(trackLength);
 
-        float speed = trackLength / runTimeInHours;
-        System.out.println(speed);
+        speed = trackLength / runTimeInHours;
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sanmac_interview",
@@ -61,9 +60,9 @@ public class Main {
 
             Statement statement = connection.createStatement();
 
-            String sqlQuery = "INSERT INTO runners (name, radius, start_time, end_time, lap_count, speed, duration)" +
-                    "VALUES ('" + name + "', '" + radius + "','" + startTime + "','" + endTime + "','" + laps + "'," +
-                    "'"+speed+"','"+runTimeInSecs+"')";
+            String sqlQuery = "INSERT INTO runners (name, speed, radius, start_time, end_time, duration, lap_count)" +
+                    "VALUES ('" + name + "','" + speed + "','" + radius + "','" + startTime + "','" + endTime + "','"
+                    + runTimeInSecs + "','"+ laps + "')";
 
             statement.execute(sqlQuery);
 
@@ -73,6 +72,18 @@ public class Main {
             e.printStackTrace();
         }
 
+    }
+
+    private float calculateSpeed() {
+        Duration timeDifference = Duration.between(startTime, endTime);
+
+        runTimeInSecs = timeDifference.toSeconds();
+
+        float runTimeInHours = runTimeInSecs / (60*60);
+
+        float trackLength = (float) ((float) 2 * Math.PI * radius * laps) / 1000;
+
+        return speed = trackLength / runTimeInHours;
     }
 
     public void updateData() {
@@ -153,7 +164,7 @@ public class Main {
         this.end_time = endTime;
     }
 
-    public int getNumLaps() {
+    public float getNumLaps() {
         return laps;
     }
 
