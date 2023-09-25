@@ -3,7 +3,7 @@ package com.example.sanmak;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class InputController {
+public class InputController extends HomeController {
 
     @FXML
     private TextField nameText;
@@ -25,8 +25,8 @@ public class InputController {
         String endTime = endTimeText.getText();
         int numLaps = Integer.parseInt(numLapText.getText());
 
-        Main main = new Main(name, radius, startTime, endTime, numLaps);
+        Runner runner = new Runner(name, 0, radius, startTime, endTime, 0, numLaps);
 
-        Main.inputData();
+        runner.inputData();
     }
 }
