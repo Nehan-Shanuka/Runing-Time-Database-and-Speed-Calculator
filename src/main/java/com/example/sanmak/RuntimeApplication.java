@@ -16,7 +16,7 @@ public class RuntimeApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(RuntimeApplication.class.getResource("home-page.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         primaryStage.setTitle("Welcome to Runtime Application");
         primaryStage.setScene(scene);
         primaryStage.show();
