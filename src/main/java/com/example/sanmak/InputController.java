@@ -50,7 +50,7 @@ public class InputController extends HomeController {
         }
     }
 
-    protected void inputData(Runner runner) {
+    protected void calculateSpeedAndDuration(Runner runner) {
 
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
@@ -84,15 +84,20 @@ public class InputController extends HomeController {
 
         float speed = trackLength / runTimeInHours;
         runner.setSpeed(speed);
+    }
+
+    protected void inputData(Runner runner) {
+
+        calculateSpeedAndDuration(runner);
 
         try {
             Connection connection = getConnection();
 
             Statement statement = connection.createStatement();
 
-            String sqlQuery = "INSERT INTO runners (name, speed, radius, start_time, end_time, duration, lap_count)" +
-                    "VALUES ('" + runner.getName() + "','" + speed + "','" + runner.getRadius() + "','" + runner.getStartTime() +
-                    "','" + runner.getEndTime() + "','" + duration + "','"+ runner.getLap() + "')";
+            String sqlQuery = "INSERT INTO runners (name, radius, start_time, end_time, lap_count)" +
+                    "VALUES ('" + runner.getName() + "','" + runner.getRadius() + "','" + runner.getStartTime() +
+                    "','" + runner.getEndTime() + "','"+ runner.getLap() + "')";
 
             statement.execute(sqlQuery);
 

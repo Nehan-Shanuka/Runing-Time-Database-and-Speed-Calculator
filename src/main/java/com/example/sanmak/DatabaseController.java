@@ -2,12 +2,8 @@ package com.example.sanmak;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,7 +13,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
-public class DatabaseController extends HomeController implements Initializable {
+public class DatabaseController extends InputController implements Initializable {
 
     @FXML
     private TableView<Runner> runnersTable;
@@ -72,10 +68,11 @@ public class DatabaseController extends HomeController implements Initializable 
             resultSet = statement.executeQuery(query);
             Runner runner;
             while (resultSet.next()) {
-                runner = new Runner(resultSet.getString("name"), resultSet.getFloat("speed"),
-                        resultSet.getDouble("radius"), resultSet.getString("start_time"),
-                        resultSet.getString("end_time"), resultSet.getFloat("duration"),
-                        resultSet.getInt("lap_count"));
+                runner = new Runner(resultSet.getString("name"), 0, resultSet.getDouble("radius"),
+                        resultSet.getString("start_time"), resultSet.getString("end_time"),
+                        0, resultSet.getInt("lap_count"));
+
+                calculateSpeedAndDuration(runner);
 
                 runnerList.add(runner);
             }
