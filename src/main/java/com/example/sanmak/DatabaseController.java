@@ -49,6 +49,8 @@ public class DatabaseController extends InputController implements Initializable
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sanmac_interview",
                     "root", "RICHmond@?12");
 
+            // jdbc:mysql://localhost:3306/?user=root
+            // `sanmac_interview` is the database name
             return connection;
 
         } catch (Exception e) {
